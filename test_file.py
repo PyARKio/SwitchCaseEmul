@@ -92,3 +92,16 @@ def closed_range(start: int, stop: int, step=1) -> range:
         raise ValueError("Start must be less than stop.")
 
     return range(start, stop + step, step)
+
+
+def tyu():
+    ...
+
+
+if __name__ == '__main__':
+    with switch('1') as s:
+        print(s.case(1, tyu))
+        print(s.case(2, tyu))
+        print(s.case(3, tyu))
+        print(s.case('1', tyu))
+        print(s.case(4, tyu))

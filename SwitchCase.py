@@ -15,8 +15,10 @@ class switch:
     def default(self):
         return True
 
-    def case(self):
-        return True
+    def case(self, val):
+        if val == self.value:
+            return True
+        return False
 
     def __enter__(self):
         return self
@@ -27,4 +29,8 @@ class switch:
 
 if __name__ == '__main__':
     with switch('1') as s:
-        ...
+        print(s.case(1))
+        print(s.case(2))
+        print(s.case(3))
+        print(s.case('1'))
+        print(s.case(3))
